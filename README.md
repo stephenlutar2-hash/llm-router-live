@@ -1,7 +1,28 @@
-# llm-router-live
+---
+title: LLM-Router Live
+emoji: 🛰️
+colorFrom: green
+colorTo: indigo
+sdk: static
+app_file: index.html
+pinned: false
+license: apache-2.0
+---
 
-Source-mirrored from [HF Space SZLHOLDINGS/llm-router-live](https://huggingface.co/spaces/SZLHOLDINGS/llm-router-live) at SHA `99aa9a448c821ee66073b1d2b3bad1444946d236`.
+# LLM-Router Live
 
-This GitHub mirror lets the public read every line of code behind the live demo. Apache-2.0.
+A live 3D node graph of the a11oy unified open-LLM router.
 
-Doctrine v11 · 749 declarations / 14 axioms / 163 tracked sorries.
+- **Organs** (a11oy / amaru / sentra / rosie / vessels / killinchu) at the **center**.
+- **7 router tiers (T0–T6)** as **concentric rings** (cache → small → standard → code → reasoning → long-context → multimodal).
+- **30+ open LLMs** on the **outer ring**, colored by license class: **GREEN** (Apache/MIT), **AMBER** (community/Llama/TII), **RED** (research-only). Real HF repo IDs, contexts, and benchmarks from the router spec + landscape doc.
+- When the router **serves a query**, the **organ → tier → model path lights up**; active models **glow**; **edge thickness = throughput**.
+- **Polls** `https://szlholdings-a11oy.hf.space/v1/router/stats` every **1 s**. If the endpoint is offline it runs in clearly-labelled **DEMO MODE** (deterministic routes following the contract's tier rules) and auto-promotes to **LIVE** when the endpoint answers.
+- **Click a model** → license / context / MMLU-class card with HF link.
+- **"Sovereign mode"** toggle greys every non-GREEN model and hides non-GREEN routes — mirroring the router contract's `governanceTier=sovereign` GREEN-only license floor.
+
+**Tech**: Three.js **r171**, **WebGPURenderer** baseline + **WebGL2 fallback**, Kanchay tokens.
+
+Embeddable: `<iframe src="https://szlholdings-llm-router-live.hf.space"></iframe>`.
+
+— Yachay (CTO), SZL Holdings
